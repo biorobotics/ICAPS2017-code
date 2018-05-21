@@ -73,7 +73,7 @@ AgentSpeed = 5;
 
 colors = ['m','g','b','c'];
 
-Nsteps = 100;
+Nsteps = 5000;
 dt = 0.001;
 
 % Initializing Fourier coefficients of coverage distribution

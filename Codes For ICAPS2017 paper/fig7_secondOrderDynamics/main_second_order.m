@@ -23,7 +23,7 @@ obstacles.number = numel(obstacles.r);
 
 % Number of wave-numbers to be used
 Nk = 50;%%
-livePlot = false; %set <true> if you want live plot for trajectories, other <false> for faster execution
+livePlot = true; %set <true> if you want live plot for trajectories, other <false> for faster execution
 %% Calculating muk
 res = 100;% resolution of discretization
 xdel=Lx/res;
@@ -105,9 +105,6 @@ Foy_old = [0,0,0,0];
 Ergodicity_Metric_save=0;
 % Executing multiple steps of SMC algorithm
 for it = 1:Nsteps
-    if(it==3000)
-        pause
-    end
     time = it * dt;
     [posagents, velagents, Ck ,Fox_old, Foy_old] = secondOrderSMC(posagents, velagents, Ck, muk, time, dt, DomainBounds, AgentForce, c, obstacles, Fox_old, Foy_old);
     for iagent = 1:Nagents
